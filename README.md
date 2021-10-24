@@ -5,4 +5,4 @@ Via länken nedan och med namanet av tabellerna: **courses**, **works** och **pr
 
 Länk: https://studenter.miun.se/~niku2001/writeable/webb3/api/api.php?table=courses
 
-Skapades av: Nick Kushkbaghi
+Skapad av: Nick Kushkbaghi
