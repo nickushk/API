@@ -103,7 +103,7 @@ class Course
      * @param int id_in
      * @return bool
      */
-    public function uppdateCours(string $name, string $place, string $start_date, string $end_date, int $id_in): bool
+    public function uppdateCours(string $name, string $place, string $start_date, string $end_date, string $id_in): bool
     {
         $this->course = $name;
         $this->place = $place;

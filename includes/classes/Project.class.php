@@ -3,7 +3,7 @@ class Project
 {
     // Attributes
     private $db;
-    private $projekt;
+    private $project;
     private $about;
     private $link;
     private $image_link;
@@ -21,17 +21,17 @@ class Project
     }
 
     /**
-     * Get projekts
+     * Get projects
      * @return array
     */
     public function getAllProjects(): array
     {
         $sql = "
         SELECT * FROM projects;";
-        $coutrses = $this->db->query($sql);
+        $projects = $this->db->query($sql);
 
         // return to array
-        return $projekts_array = $coutrses->fetch_all(MYSQLI_ASSOC);
+        return $projects_array = $projects->fetch_all(MYSQLI_ASSOC);
 
     }
 
@@ -42,23 +42,23 @@ class Project
     public function getProjectById(int $id_in): array
     {
         $sql = "
-        SELECT * FROM projekts WHERE id = $id_in;";
-        $coutrses = $this->db->query($sql);
+        SELECT * FROM projects WHERE id = $id_in;";
+        $projects = $this->db->query($sql);
 
         // return to array
-        return $projekts_array = $coutrses->fetch_all(MYSQLI_ASSOC);
+        return $projects_array = $projects->fetch_all(MYSQLI_ASSOC);
 
     }
 
     /**
-     * Add projekt
-     * @param string projekt, code...
+     * Add project
+     * @param string project, code...
      * @return bool
      */
     public function addProject(string $name, string $about, string $image_link, string $link): bool
     {       
         
-            $this->projekt = $name;
+            $this->project = $name;
             $this->about = $about;
             $this->image_link = $image_link;
             $this->link = $link;
@@ -68,7 +68,7 @@ class Project
             ("INSERT INTO projects (project, about, image_link, link) 
             VALUES (?, ?, ?, ?)");
             $prepare_statment->bind_param("ssss", 
-            $this->projekt, $this->about, $this->image_link, $this->link);
+            $this->project, $this->about, $this->image_link, $this->link);
 
             if ($prepare_statment->execute()) {
                 return true;
@@ -82,7 +82,7 @@ class Project
     }
 
     /**
-     * delete a projekt by id
+     * delete a project by id
      * @param int id_in
      * @return bool
      */
@@ -100,24 +100,24 @@ class Project
 
     /**
      * update project
-     * @param string projekt, code...
+     * @param string project, code...
      * @param int id_in
      * @return bool
      */
-    public function UpdateProject(string $name, string $about, string $image_link, string $link, int $id_in): bool
+    public function UpdateProject(string $name, string $about, string $image_link, string $link, string $id_in): bool
     {
-        $this->projekt = $name;
+        $this->project = $name;
         $this->about = $about;
         $this->image_link = $image_link;
         $this->link = $link;
 
         $id = intval($id_in);
-        if (strlen($this->projekt) < 1 | strlen($this->about) < 1 | strlen($this->image_link) < 1 | strlen($this->link) < 1) {
+        if (strlen($this->project) < 1 | strlen($this->about) < 1 | strlen($this->image_link) < 1 | strlen($this->link) < 1) {
             return false;
         }else{
             // Check input fomat
             $prepare_statment = $this->db->prepare("UPDATE projects SET project= ? , about = ?, image_link= ?, link= ? WHERE id = $id");
-            $prepare_statment->bind_param("ssss", $this->projekt, $this->about, $this->image_link, $this->link);
+            $prepare_statment->bind_param("ssss", $this->project, $this->about, $this->image_link, $this->link);
 
             if ($prepare_statment->execute()) {
                 return true;

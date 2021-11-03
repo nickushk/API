@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Install arbetserfarenheter</title>
+    <title>Install admin</title>
 </head>
 <body>
 
@@ -30,27 +30,17 @@ if ($db->connect_errno > 0) {
 *
 -----------------*/
 // create works tabell
-$sql = "DROP TABLE IF EXISTS works;
-    CREATE TABLE works(
+$sql = "DROP TABLE IF EXISTS admins;
+    CREATE TABLE admins(
     id INT (11) PRIMARY KEY AUTO_INCREMENT,
-    work VARCHAR (225) NOT NULL,
-    place VARCHAR (64) NOT NULL,
-    start_date VARCHAR (7) NOT NULL,
-    end_date VARCHAR (7) NOT NULL,
+    user VARCHAR (225) NOT NULL,
+    pass VARCHAR (225) NOT NULL,
     postdate timestamp NOT NULL DEFAULT current_timestamp()
 );";
 
 // Insert works as query
-$sql .= "INSERT INTO works(work, place, start_date, end_date)
-        VALUES ('lärarassistent', 'Skåne', '2015/11', '2019/12');
-
-        INSERT INTO works
-        (work, place, start_date, end_date)
-        VALUES ('Mattelärare', 'Skåne', '2019/01', '2021/08');
-
-        INSERT INTO works
-        (work, place, start_date, end_date)
-        VALUES ('Digital kompetens lärare', 'Skåne', '2019/01', '2021/08');
+$sql .= "INSERT INTO admins(user, pass )
+        VALUES ('niku2001', '1111');
         ";
 
 

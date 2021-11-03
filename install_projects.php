@@ -41,19 +41,19 @@ $sql = "DROP TABLE IF EXISTS projects;
 // Insert Projects as query
 $sql .= "INSERT INTO projects(project, about, image_link, link)
    VALUES ('Skåne färdtjänst', 'Webbplats med fokus på användbarhet och WCAG AAA krav.',
-    'project1.jpg', 'https://studenter.miun.se/~niku2001/dt068/');
+    'https://studenter.miun.se/~niku2001/writeable/webb3/api/images/project1.jpg', 'https://studenter.miun.se/~niku2001/dt068/');
 
 
 INSERT INTO projects(project, about, image_link, link)
-   VALUES ('WD', 'Webbplats med fokus på webbtypogerafi', 'project3.jpg', 'https://studenter.miun.se/~niku2001/gd008g/projekt/home.html');
+   VALUES ('WD', 'Webbplats med fokus på webbtypogerafi', 'https://studenter.miun.se/~niku2001/writeable/webb3/api/images/project3.jpg', 'https://studenter.miun.se/~niku2001/gd008g/projekt/home.html');
 
 
 INSERT INTO projects(project, about, image_link, link)
-   VALUES ('VOMusic', 'Webbplats med fokus på E-handel', 'project2.jpg', 'https://studenter.miun.se/~niku2001/dt163g/project/home.html');
+   VALUES ('VOMusic', 'Webbplats med fokus på E-handel', 'https://studenter.miun.se/~niku2001/writeable/webb3/api/images/project2.jpg', 'https://studenter.miun.se/~niku2001/dt163g/project/home.html');
 
 
 INSERT INTO projects(project, about, image_link, link)
-   VALUES ('Skog AB', 'Webbplats med fokus på CMS och skappas via Wordpress', 'project4.jpg', 'https://studenter.miun.se/~niku2001/dt152g/moment1.2/');
+   VALUES ('Skog AB', 'Webbplats med fokus på CMS och skappas via Wordpress', 'https://studenter.miun.se/~niku2001/writeable/webb3/api/images/project4.jpg', 'https://studenter.miun.se/~niku2001/dt152g/moment1.2/');
 
 
 ";

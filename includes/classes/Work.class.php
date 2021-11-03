@@ -104,7 +104,7 @@ class Work
      * @param int id_in
      * @return bool
      */
-    public function updateWork(string $name, string $place, string $start_date, string $end_date,int $id_in): bool
+    public function updateWork(string $name, string $place, string $start_date, string $end_date,string $id_in): bool
     {
         $this->work = $name;
         $this->place = $place;
